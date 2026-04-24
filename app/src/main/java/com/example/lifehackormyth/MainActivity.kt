@@ -1,6 +1,9 @@
 package com.example.lifehackormyth
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -15,6 +18,20 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        val btnStart = findViewById<Button>(R.id.btnNext)
+        val intent = Intent(this, quiz::class.java)
+
+        // Go to quiz page when button is clicked
+        // / IIE.2026d.
+        // Introduction to Mobile Application Development [Module Manual].
+        // The Independent Institute of Education.
+        // [Accessed 24 April 2026].
+
+        btnStart.setOnClickListener {
+            startActivity(intent)
+            Log.d("MSG", "Navigation successful")
         }
     }
 }
